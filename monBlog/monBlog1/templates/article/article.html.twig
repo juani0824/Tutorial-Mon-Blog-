@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{article.titre}}{% endblock %}
+{% block stylesheets %}
+
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="container">
+
+    <h1>{{article.titre}}</h1>
+    <p>{{article.createdAt|date}} -Commentaires : {{ commentaire|length }}</p>
+    <p>{{article.contenu|raw}}</p>
+
+    <h2>Commentaires</h2>
+    {% for commentaire in commentaire %}
+    <p>Commentaire écrit par {{ commentaire.pseudo }} le {{ commentaire.createdAt|date }}</p>
+    <p> {{ commentaire.contenu}}</p>
+    {% else %}
+    <p> Il n'y a pas de commentaire, publiez le premier ! </p>
+    {% endfor %}
+
+    {{ form_start(CommentaireForm, {'attr': {'novalidate': 'novalidate'}})}}
+
+    <div class="form-group input">{{ form_row(CommentaireForm.pseudo, {'attr': {'class':'form-control  bg-light'} }) }}
+    </div>
+    <div class="form-group input">{{ form_row(CommentaireForm.email, {'attr': {'class':'form-control  bg-light'} }) }}</div>
+    <div class="form-group" id="form-textarea">{{ form_row(CommentaireForm.contenu)}} </div>
+    <div class="form-group input">{{ form_row(CommentaireForm.rgpd)}}</div>
+    <div class="form-group">{{ form_row(CommentaireForm.envoyer, {'attr': {'class':'btn btn-warning'}}) }}</div>
+    {{ form_end(CommentaireForm) }}
+
+
+</div>
+{% endblock %}

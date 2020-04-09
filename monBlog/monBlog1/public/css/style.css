@@ -1,0 +1,52 @@
+/* Navigation*/
+nav {
+    border-bottom: #aacfcf solid 10px !important;
+}
+
+nav {
+    background: #679b9b !important;
+}
+
+.navbar-brand {
+    background-color:#f8f9fc;
+}
+
+.navbar .nav-item {
+    font-size: x-large;
+}
+
+.nav-link {
+    color: white;
+}
+
+
+.nav-link:hover{
+    color: #ffc107;
+}
+
+/* Fonts*/
+h2 a{
+   /* color: #a4c5c6;*/
+   color: #679b9b ;
+}
+
+/* Formulaire*/
+.form-group textarea {
+    height: 200px;
+    border-color: #dcdcdd;
+}
+
+#form-textarea div {
+    display: flex;
+    flex-flow: column wrap;
+
+}
+
+#form-textarea textarea {
+    background: #f8f9fa;
+}
+
+form button[type="submit"]{
+    background-color: #ffc107;
+    border:none;
+}
